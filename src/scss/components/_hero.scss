@@ -1,0 +1,242 @@
+.aquila-hero {
+    display: grid;
+    gap: rem(20px);
+
+    @include m2() {
+        gap: rem(30px);
+    }
+    @include m3() {
+        grid-template-areas: 
+        'content1 content1'
+        'content2 grid-group';
+        grid-template-columns: 1fr rem(459px);
+        column-gap: rem(20px);
+    }
+
+    @include m4() {
+        grid-template-columns: 1fr rem(555px);
+    }
+}
+.aquila-hero__content {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    z-index: 5;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    color: $white-400;
+    padding: rem(20px);
+    border-radius: 1rem;
+
+    @include m1() {
+    }
+    @include m2() {
+        padding: rem(30px);
+    }
+    @include m3() {
+        padding: rem(40px);
+    }
+}
+
+.aquila-hero__content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aquila-hero__content::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.60);
+
+    @include m2() {
+        background: linear-gradient(288deg, rgba(0, 0, 0, 0.00) 33.79%, rgba(0, 0, 0, 0.60) 73.62%);
+    }
+}
+
+.aquila-hero__content--primary {
+    .aquila-hero__title,
+    .aquila-hero__text {
+        @include m1() {
+            max-width: 80%;
+        }
+        @include m2() {
+            max-width: 75%;
+        }
+        @include m3() {
+            max-width: 60%;
+        }
+        @include m4() {
+            max-width: 40%;
+        }
+    }
+    .aquila-hero__text {
+        margin-bottom: rem(64px);
+    
+        @include m1() {
+            margin-bottom: rem(153px);
+        }
+        @include m2() {
+            margin-bottom: rem(180px);
+        }
+        @include m3() {
+            margin-bottom: rem(230px);
+        }
+    }
+
+    @include m3() {
+        grid-area: content1;
+    }
+}
+
+.aquila-hero__content--primary::before {
+    background-image: url(../assets/images/hero1.webp);
+}
+
+.aquila-hero__content--secondary::before {
+    background-image: url(../assets/images/hero2.webp);
+}
+
+.aquila-hero__content--secondary {
+    .aquila-hero__title,
+    .aquila-hero__text {
+        @include m1() {
+            max-width: 80%;
+        }
+        @include m2() {
+            max-width: 60%;
+        }
+        @include m3() {
+            max-width: 80%;
+        }
+        @include m4() {
+            max-width: 60%;
+        }
+    }
+    .aquila-hero__text {
+        margin-bottom: rem(64px);
+    
+        @include m1() {
+            margin-bottom: rem(124px);
+        }
+        @include m2() {
+            margin-bottom: rem(70px);
+        }
+        @include m3() {
+            margin-bottom: rem(105px);
+        }
+    }
+
+    @include m3() {
+        grid-area: content2;
+    }
+}
+
+.aquila-hero__extra-img {
+    position: absolute;
+    z-index: -1;
+    width: rem(100px);
+    right: 0.5rem;
+    top: 1rem;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+
+    @include m1() {
+        width: rem(170px);
+        right: 1.5rem;
+    }
+
+    @include m2() {
+        width: 14rem;
+        right: 5.5rem;
+    }
+    @include m3() {
+        width: 12rem;
+        right: 0.5rem;
+    }
+    @include m4() {
+        top: 2rem;
+        width: 14rem;
+        right: 4.5rem;
+    }
+}
+.aquila-hero__title {
+    @include fs32();
+}
+.aquila-hero__text {
+    @include fs17();
+}
+.aquila-hero__button {
+    margin-top: auto;
+    @include primary-btn();
+}
+.aquila-hero__items-grid {
+    display: grid;
+    gap: rem(10px);
+
+    @include m1() {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include m3() {
+        grid-area: grid-group;
+    }
+}
+.aquila-hero__item {
+    background-color: $white-100;
+    border-radius: 1rem;
+    padding: rem(20px);
+
+    @include m3() {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+.aquila-hero__item-title {
+    color: $black-600;
+    margin-bottom: rem(8px);
+    @include fs20();
+}
+.aquila-hero__item-text {
+    color: $black-300;
+    @include fs15();
+}
+.aquila-hero__item-image {
+    margin-top: rem(24px);
+    width: rem(40px);
+    height: rem(40px);
+    margin-left: auto;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    @include m1() {
+        margin-top: rem(30px);
+    }
+    @include m2() {
+        margin-top: rem(54px);
+    }
+    @include m3() {
+        margin-top: auto;
+        align-self: flex-end;
+    }
+}

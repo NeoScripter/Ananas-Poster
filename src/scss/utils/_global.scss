@@ -1,0 +1,32 @@
+@include m2() {
+    $section-gap: rem(60px);
+}
+
+@include m3() {
+    $section-gap: rem(80px);
+}
+
+@include m4() {
+    $section-gap: rem(100px);
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Regular';
+    scroll-behavior: smooth;
+}
+
+.aquila-wrapper {
+    max-width: $wrapper-width;
+    margin-inline: auto;
+    padding-inline: rem(15px);
+}
+
+.aquila-section {
+    margin-bottom: $section-gap;
+}

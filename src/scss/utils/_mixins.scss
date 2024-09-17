@@ -1,0 +1,154 @@
+@mixin max-width($threshold: $small-screen) {
+    @media screen and (max-width: $threshold) {
+        @content;
+    }
+}
+
+@mixin min-width($threshold: $small-screen) {
+    @media screen and (min-width: $threshold) {
+        @content;
+    }
+}
+
+@mixin hover() {
+    &:is(:hover, :focus-visible) {
+        @content;
+    }
+}
+
+@mixin m1() {
+    @media screen and (min-width: $breakpoint1) {
+        @content;
+    }
+}
+
+@mixin m2() {
+    @media screen and (min-width: $breakpoint2) {
+        @content;
+    }
+}
+
+@mixin m3() {
+    @media screen and (min-width: $breakpoint3) {
+        @content;
+    }
+}
+
+@mixin m4() {
+    @media screen and (min-width: $breakpoint4) {
+        @content;
+    }
+}
+
+@mixin fs15($font-family: "Regular") {
+    font-family: $font-family;
+    font-size: rem(14px);
+    font-style: normal;
+    line-height: 120%; 
+
+    @include m4() {
+        font-size: rem(15px);
+    }
+}
+
+@mixin fs16() {
+    font-family: "Medium";
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+@mixin fs17() {
+    font-family: "Regular";
+    font-size: rem(15px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+
+    @include m2() {
+        font-size: rem(17px);
+    }
+}
+
+@mixin fs18() {
+    font-family: "Regular";
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+
+    @include m2() {
+        font-size: rem(18px);
+    }
+}
+
+@mixin fs20() {
+    font-family: "Bold";
+    font-size: rem(20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; 
+}
+
+@mixin fs22() {
+    font-family: "Bold";
+    font-size: rem(18px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; 
+
+    @include m2() {
+        font-size: rem(22px);
+    }
+}
+
+@mixin fs24() {
+    font-family: "Bold";
+    font-size: rem(18px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; 
+
+    @include m2() {
+        font-size: rem(24px);
+    }
+}
+
+@mixin fs32() {
+    font-family: "Bold";
+    font-size: rem(26px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+
+    @include m2() {
+        font-size: rem(32px);
+    }
+}
+
+@mixin primary-btn() {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $green-400;
+    border-radius: 0.3rem;
+    padding: rem(12px) rem(15px);
+    transition: opacity 0.3s ease;
+
+    @include fs16();
+
+    @include m2() {
+        min-width: rem(220px);
+        padding-inline: rem(30px);
+    }
+
+    @include hover() {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}
