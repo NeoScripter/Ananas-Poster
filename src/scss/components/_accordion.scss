@@ -1,0 +1,62 @@
+.aquila-accordion {
+
+}
+
+.aquila-accordion__img {
+    margin-bottom: rem(20px);
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @include m1() {
+        height: rem(200px);
+    }
+
+    @include m2() {
+        height: rem(300px);
+        margin-bottom: rem(30px);
+    }
+}
+
+.aquila-accordion__title{
+    color: $black-600;
+    @include fs32-overview();
+}
+
+.aquila-accordion__slider{
+    color: $black-300;
+    margin-block: rem(8px) rem(20px);
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+    @include fs15();
+
+    @include m2() {
+        margin-block: rem(20px) rem(30px);
+    }
+}
+
+.aquila-accordion__slider--closed {
+    grid-template-rows: max-content 0fr;
+}
+
+.aquila-accordion__visible {
+
+}
+
+.aquila-accordion__invisible {
+    overflow: hidden;
+}
+
+.aquila-accordion__btn {
+    cursor: pointer;
+    border: none;
+    color: $white-400;
+    @include primary-btn();
+}
