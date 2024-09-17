@@ -127,6 +127,19 @@
     }
 }
 
+@mixin fs32-overview() {
+    font-family: "Bold";
+    font-size: rem(22px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+
+    @include m2() {
+        font-size: rem(32px);
+    }
+}
+
+
 @mixin primary-btn() {
     min-width: 100%;
     display: flex;

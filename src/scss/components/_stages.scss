@@ -1,0 +1,82 @@
+
+.aquila-stages__title {
+    color: $black-600;
+    margin-bottom: rem(20px);
+    @include fs32();
+
+    @include m2() {
+        margin-bottom: rem(30px);
+    }
+}
+
+.aquila-stages__items-grid {
+    display: grid;
+    gap: rem(10px);
+
+    @include m1() {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include m2() {
+        gap: rem(20px);
+    }
+
+    @include m3() {
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(30px);
+    }
+
+    @include m4() {
+        gap: rem(50px);
+    }
+}
+
+.aquila-stages__item {
+    & > * {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    @include m3() {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            right: -1.5rem;
+            top: 3rem;
+            width: rem(31px);
+            height: rem(12px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: rem(31px) rem(12px);
+            background-image: url(../assets/svgs/stage-arrow.svg);
+        }
+
+        &:last-of-type::after {
+            content: none;
+        }
+    }
+
+    @include m4() {
+        &::after {
+            right: -2.5rem;
+        }
+    }
+}
+
+.aquila-stages__img {
+    width: max-content;
+    border-radius: 50%;
+    background-color: $white-100;
+    margin-bottom: rem(20px);
+}
+
+.aquila-stages__headline {
+    color: $black-600;
+    margin-bottom: rem(6px);
+    @include fs20();
+}
+
+.aquila-stages__description {
+    @include fs15();
+}
