@@ -13,10 +13,10 @@ export default class CarouselHandler {
     private touchEndX: number = 0;
     private minSwipeDistance: number = 50; 
 
-    constructor(item: HTMLElement) {
-        this.viewport = item.querySelector('.aquila-catalog__viewport');
-        this.prevButton = item.querySelector('.aquila-catalog__btn--prev');
-        this.nextButton = item.querySelector('.aquila-catalog__btn--next');
+    constructor(item: HTMLElement, viewportSelector: string, prevBtnSelector: string, nextBtnSelector: string) {
+        this.viewport = item.querySelector(viewportSelector);
+        this.prevButton = item.querySelector(prevBtnSelector);
+        this.nextButton = item.querySelector(nextBtnSelector);
         this.numberOfSlides = 0;
         this.gapWidth = 0;
         this.offsetToEnd = 0;

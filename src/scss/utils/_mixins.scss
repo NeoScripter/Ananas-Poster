@@ -91,6 +91,18 @@
     line-height: 120%; 
 }
 
+@mixin fs20-promos() {
+    font-family: "Bold";
+    font-size: rem(18px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+
+    @include m2() {
+        font-size: rem(20px);
+    }
+}
+
 @mixin fs22() {
     font-family: "Bold";
     font-size: rem(18px);
