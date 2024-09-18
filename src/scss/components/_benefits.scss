@@ -1,0 +1,166 @@
+
+
+.aquila-benefits__title {
+    color: $black-600;
+    margin-bottom: rem(20px);
+    @include fs32();
+
+    @include m2() {
+        margin-bottom: rem(30px);
+    }
+}
+
+.aquila-benefits__grid {
+    display: grid;
+    gap: rem(10px);
+
+    @include m1() {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include m2() {
+        grid-template-rows: repeat(2, rem(250px));
+        gap: rem(20px);
+        grid-template-columns: rem(318px) 1fr rem(318px);
+
+        grid-template-areas: 
+        'bike plant plant'
+        'bike pay pay'
+        'mail mail levi'
+        'pack pack levi';
+
+    }
+
+    @include m4() {
+        gap: rem(30px);
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, rem(285px));
+
+        grid-template-areas: 
+        'bike plant pay levi'
+        'bike pack mail levi';
+    }
+}
+
+.aquila-benefits__item--bike {
+    @include m2() {
+        grid-area: bike;
+    }
+}
+
+.aquila-benefits__item--plant {
+    @include m2() {
+        grid-area: plant;
+    }
+}
+
+.aquila-benefits__item--levi {
+    @include m2() {
+        grid-area: levi;
+    }
+}
+
+.aquila-benefits__item--pack {
+    @include m2() {
+        grid-area: pack;
+    }
+}
+
+.aquila-benefits__item--mail {
+    @include m2() {
+        grid-area: mail;
+    }
+}
+
+.aquila-benefits__item--pay {
+    @include m2() {
+        grid-area: pay;
+    }
+}
+
+.aquila-benefits__item {
+    position: relative;
+    z-index: 2;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: rem(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: rem(6px);
+    height: rem(200px);
+
+    @include m1() {
+        height: rem(250px);
+    }
+    @include m2() {
+        padding: rem(30px);
+        height: auto;
+    }
+}
+
+.aquila-benefits__item--img {
+    color: $white-400;
+
+    .aquila-benefits__img {
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(181deg, rgba(0, 0, 0, 0.00) 1.09%, rgba(0, 0, 0, 0.90) 91.88%);
+    }
+}
+
+.aquila-benefits__item--blank {
+    color: $black-600;
+    background-color: $white-100;
+
+    .aquila-benefits__img {
+        background-color: $white-400;
+    }
+}
+
+.aquila-benefits__bg-img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    img {
+        width: 100%;
+        height: 100%;
+        object-position: 10% 20%;
+        object-fit: cover;
+
+        @include m2() { 
+            object-position: 10% 30%;
+        }
+    }
+}
+
+.aquila-benefits__img {
+    width: rem(60px);
+    height: rem(60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+
+    img {
+        width: rem(30px);
+        height: rem(30px);
+    }
+}
+
+.aquila-benefits__heading {
+    margin-top: auto;
+    @include fs24();
+}
+
+.aquila-benefits__description {
+    @include fs15();
+}
