@@ -1,0 +1,184 @@
+.aquila-catalog {
+    position: relative;
+}
+
+.aquila-catalog__title {
+    color: $black-600;
+    @include fs32-overview();
+}
+
+.aquila-catalog__selection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: rem(10px);
+    margin-block: rem(20px);
+}
+
+.aquila-catalog__option {
+    cursor: pointer;
+    background-color: $white-100;
+    border-radius: 1rem;
+    border: none;
+    color: $black-300;
+    padding: rem(7px) rem(12px);
+    transition: background-color 0.3s ease;
+}
+
+.aquila-catalog__option--selected {
+    background-color: $green-400;
+    color: $white-400;
+}
+
+.aquila-catalog__carousel {
+    overflow-x: hidden;
+}
+
+.aquila-catalog__viewport {
+    --_slides: 2;
+    --_gap: 0.625rem;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: var(--_gap);
+    touch-action: pan-y;
+
+    @include m1() {
+
+    }
+
+    @include m2() {
+        --_slides: 3;
+        --_gap: 1.25rem;
+    }
+
+    @include m3() {
+        --_slides: 4;
+        --_gap: 1.875rem;
+    }
+
+    @include m4() {
+        --_slides: 5;
+    }
+}
+
+.aquila-catalog__item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc((100% - (var(--_gap) * (var(--_slides) - 1))) / var(--_slides));
+    flex-shrink: 0;
+    flex-grow: 0;
+    gap: rem(20px);
+}
+
+.aquila-catalog__img {
+    position: relative;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.aquila-catalog__item-headline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(12px);
+}
+
+.aquila-catalog__item-label {
+    color: $white-400;
+    background-color: $red-400;
+    border-radius: 0.4rem;
+    width: max-content;
+    text-align: center;
+    font-family: 'Bold';
+    padding: 0.4rem;
+    color: $white-400;
+    @include fs15('Bold');
+}
+
+.aquila-catalog__like {
+    background-color: $white-100;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.aquila-catalog__like--clicked {
+    svg {
+        fill: $green-400;
+    }
+}
+
+.aquila-catalog__info {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aquila-catalog__description {
+    color: $black-600;
+    @include fs18();
+}
+
+.aquila-catalog__price {
+    margin-top: auto;
+    display: block;
+}
+
+.aquila-catalog__current-price {
+    font-family: 'Bold';
+    color: $black-600;
+    @include fs22();
+}
+
+.aquila-catalog__former-price {
+    color: $gray-400;
+    text-decoration: line-through;
+    @include fs18();
+}
+
+.aquila-catalog__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(30px);
+    margin-top: rem(30px);
+}
+
+.aquila-catalog__btn {
+    background-color: transparent;
+    border: none;
+    width: rem(25px);
+    cursor: pointer;
+
+    @include m4() {
+        position: absolute;
+        top: rem(270px);
+
+    }
+}
+.aquila-catalog__btn--prev {
+    @include m4() {
+        left: -3rem;
+    }
+}
+
+.aquila-catalog__btn--next {
+    @include m4() {
+        right: -3rem;
+    }
+}
